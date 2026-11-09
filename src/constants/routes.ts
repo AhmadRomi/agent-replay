@@ -1,10 +1,11 @@
+export const ERoutes = {
+  LOGIN: '/login',
+  DASHBOARD: '/dashboard',
+  PROJECTS: '/projects',
+  TRACES: '/traces',
+  REPLAYS: '/replays',
+  EVALUATIONS: '/evaluations',
+  SETTINGS: '/settings',
+} as const
 
-export enum ERoutes {
-    LOGIN = '/login',
-    DASHBOARD = '/dashboard',
-    PROJECTS = '/projects',
-    TRACES = '/traces',
-    REPLAYS = '/replays',
-    EVALUATIONS = '/evaluations',
-    SETTINGS = '/settings',
-};
+export type ERoutes = (typeof ERoutes)[keyof typeof ERoutes]
