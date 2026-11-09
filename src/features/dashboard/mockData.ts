@@ -1,3 +1,5 @@
+import type { Status } from '@/components/ui/StatusBadge'
+
 export interface OverviewStat {
   label: string
   value: string
@@ -30,7 +32,7 @@ export const mockActivity: ActivityPoint[] = [
 export interface MockTrace {
   id: string
   agent: string
-  status: 'success' | 'error' | 'running'
+  status: Status
   duration: string
   startedAt: string
 }
@@ -38,7 +40,7 @@ export interface MockTrace {
 export const mockRecentTraces: MockTrace[] = [
   { id: 'trc_8f2a91', agent: 'support-triage-agent', status: 'success', duration: '1.2s', startedAt: '2 min ago' },
   { id: 'trc_7d13c4', agent: 'order-lookup-agent', status: 'success', duration: '640ms', startedAt: '6 min ago' },
-  { id: 'trc_6b90ee', agent: 'refund-processor', status: 'error', duration: '3.4s', startedAt: '14 min ago' },
+  { id: 'trc_6b90ee', agent: 'refund-processor', status: 'failed', duration: '3.4s', startedAt: '14 min ago' },
   { id: 'trc_5a2f10', agent: 'kb-retrieval-agent', status: 'running', duration: '—', startedAt: '19 min ago' },
   { id: 'trc_491cd8', agent: 'support-triage-agent', status: 'success', duration: '980ms', startedAt: '27 min ago' },
 ]

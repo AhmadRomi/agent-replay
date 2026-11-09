@@ -1,12 +1,6 @@
 import { Card } from '@/components/ui/Card'
-import { cn } from '@/lib/cn'
+import { StatusBadge } from '@/components/ui/StatusBadge'
 import type { MockTrace } from '../mockData'
-
-const STATUS_STYLES: Record<MockTrace['status'], string> = {
-  success: 'text-emerald-400 bg-emerald-500/10',
-  error: 'text-red-400 bg-red-500/10',
-  running: 'text-accent bg-accent/10',
-}
 
 interface RecentTracesTableProps {
   traces: MockTrace[]
@@ -36,14 +30,7 @@ export function RecentTracesTable({ traces }: RecentTracesTableProps) {
                 <td className="px-5 py-3 font-mono text-xs text-neutral-400">{trace.id}</td>
                 <td className="px-5 py-3">{trace.agent}</td>
                 <td className="px-5 py-3">
-                  <span
-                    className={cn(
-                      'inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium capitalize',
-                      STATUS_STYLES[trace.status],
-                    )}
-                  >
-                    {trace.status}
-                  </span>
+                  <StatusBadge status={trace.status} />
                 </td>
                 <td className="px-5 py-3 text-neutral-400">{trace.duration}</td>
                 <td className="px-5 py-3 text-neutral-500">{trace.startedAt}</td>

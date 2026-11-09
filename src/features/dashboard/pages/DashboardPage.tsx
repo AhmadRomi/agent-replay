@@ -1,7 +1,7 @@
+import { StatCard } from '@/components/ui/StatCard'
 import { PageHeader } from '@/components/ui/PageHeader'
 import { ActivityChart } from '../components/ActivityChart'
 import { AgentStatusList } from '../components/AgentStatusList'
-import { OverviewStatCard } from '../components/OverviewStatCard'
 import { RecentTracesTable } from '../components/RecentTracesTable'
 import { mockActivity, mockAgentStatus, mockOverviewStats, mockRecentTraces } from '../mockData'
 
@@ -12,7 +12,7 @@ export function DashboardPage() {
 
       <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {mockOverviewStats.map((stat) => (
-          <OverviewStatCard key={stat.label} {...stat} />
+          <StatCard key={stat.label} label={stat.label} value={stat.value} trend={{ value: stat.change, direction: stat.trend }} />
         ))}
       </section>
 

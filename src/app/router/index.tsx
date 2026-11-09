@@ -7,6 +7,7 @@ import { EvaluationsPage } from '@/features/evaluations/pages/EvaluationsPage'
 import { ProjectsPage } from '@/features/projects/pages/ProjectsPage'
 import { ReplaysPage } from '@/features/replays/pages/ReplaysPage'
 import { SettingsPage } from '@/features/settings/pages/SettingsPage'
+import { TraceDetailsPage } from '@/features/traces/pages/TraceDetailsPage'
 import { TracesPage } from '@/features/traces/pages/TracesPage'
 import NotFound from '@/pages/NotFound'
 
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { path: withoutLeadingSlash(ERoutes.DASHBOARD), element: <DashboardPage /> },
       { path: withoutLeadingSlash(ERoutes.PROJECTS), element: <ProjectsPage /> },
       { path: withoutLeadingSlash(ERoutes.TRACES), element: <TracesPage /> },
+      { path: `${withoutLeadingSlash(ERoutes.TRACES)}/:traceId`, element: <TraceDetailsPage /> },
       { path: withoutLeadingSlash(ERoutes.REPLAYS), element: <ReplaysPage /> },
       { path: withoutLeadingSlash(ERoutes.EVALUATIONS), element: <EvaluationsPage /> },
       { path: withoutLeadingSlash(ERoutes.SETTINGS), element: <SettingsPage /> },
